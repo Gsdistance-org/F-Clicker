@@ -429,13 +429,24 @@ namespace F_Clicker
             {
 
             }
-            versionconf = File.ReadAllLines(@".\updatefile.uconfig");
-            if (versionint >= Convert.ToInt32(versionconf[1]))
+            try
             {
-                client.DownloadFile((versionconf[2]), "F Clicker Updater.exe");
-                System.Threading.Thread.Sleep(10000);
-                Process.Start("F Clicker Updater.exe");
-                this.Close();
+                versionconf = File.ReadAllLines(@".\updatefile.uconfig");
+                if (versionint >= Convert.ToInt32(versionconf[1]))
+                {
+                    client.DownloadFile((versionconf[2]), "F Clicker Updater.exe");
+                    System.Threading.Thread.Sleep(10000);
+                    Process.Start("F Clicker Updater.exe");
+                    this.Close();
+                }
+            }
+            catch(Exception ex)
+            {
+                File.WriteAllText(@".\error.error", Convert.ToString(ex));
+            }
+            finally
+            {
+
             }
         }
 
