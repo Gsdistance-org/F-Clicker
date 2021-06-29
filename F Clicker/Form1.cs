@@ -179,5 +179,10 @@ namespace F_Clicker
         {
             Fs += Fps;
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            File.Delete(@".\fneeds.mem");
+        }
     }
 }
