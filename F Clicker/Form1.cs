@@ -356,6 +356,11 @@ namespace F_Clicker
             }
         }
 
+        private void devToolsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
