@@ -226,7 +226,8 @@ namespace F_Clicker
                     rebirts = Convert.ToDouble(master[14]);
                     xp = Convert.ToDouble(master[15]);
                     level = Convert.ToDouble(master[16]);
-
+                    ssdss = Convert.ToDouble(master[17]);
+                    corrected = Convert.ToDouble(master[18]);
                 }
             }
             catch(Exception ex)
