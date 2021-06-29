@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace F_Clicker
 {
     public partial class Form1 : Form
     {
+        string[] versionconf = new string[2];
         static int versionint = 102;
         static string ver = "1.0.2";
         string[] master = new string[28];
@@ -408,7 +410,29 @@ namespace F_Clicker
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            WebClient webclient = new WebClient();
+            var client = new WebClient();
+            try
+            {
+                if (File.Exists(@"updatefile.uconfig"))
+                {
+                    File.Delete(@"updatefile.uconfig");
+                }
+                client.DownloadFile(("https://raw.githubusercontent.com/Gsdistance-org/F-Clicker/master/F%20Clicker/updatefile.uconfig"), "updatefile.uconfig");
+            }
+            catch(Exception ex)
+            {
+                File.WriteAllText(@".\error.error", Convert.ToString(ex));
+            }
+            finally
+            {
 
+            }
+            versionconf = File.ReadAllLines(@".\updatefile.uconfig");
+            if (versionint >= Convert.ToInt32(versionconf[1]))
+            {
+                client.DownloadFile((versionconf[2]), "");
+            }
         }
 
         private void correcter_Tick(object sender, EventArgs e)

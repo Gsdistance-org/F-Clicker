@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="updatefiles\1.0.2\" />
+    <Folder Include="updatefiles\updater\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
