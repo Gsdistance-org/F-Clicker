@@ -13,6 +13,7 @@ namespace F_Clicker
 {
     public partial class Form1 : Form
     {
+        static int versionint = 102;
         static string ver = "1.0.2";
         string[] master = new string[28];
         double Fs = 0;

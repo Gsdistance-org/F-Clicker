@@ -36,6 +36,10 @@ namespace F_Clicker
             this.repaet = new System.Windows.Forms.Timer(this.components);
             this.savetimertick = new System.Windows.Forms.Timer(this.components);
             this.upgrades = new System.Windows.Forms.DataGridView();
+            this.Mouse = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Slaves = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ManualFabricator = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Fonator = new System.Windows.Forms.DataGridViewButtonColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.needswrite = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -43,20 +47,17 @@ namespace F_Clicker
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autoSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoSaveONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.devToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterwriter = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.psticker = new System.Windows.Forms.Timer(this.components);
             this.correcter = new System.Windows.Forms.Timer(this.components);
             this.playtime = new System.Windows.Forms.Timer(this.components);
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.autoSaveONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.devToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Mouse = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Slaves = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ManualFabricator = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Fonator = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upgrades)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -111,6 +112,37 @@ namespace F_Clicker
             this.upgrades.TabIndex = 2;
             this.upgrades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.upgrades_CellContentClick);
             // 
+            // Mouse
+            // 
+            this.Mouse.HeaderText = "Mouse";
+            this.Mouse.MinimumWidth = 6;
+            this.Mouse.Name = "Mouse";
+            this.Mouse.Text = "";
+            this.Mouse.Width = 125;
+            // 
+            // Slaves
+            // 
+            this.Slaves.HeaderText = "Slaves";
+            this.Slaves.MinimumWidth = 6;
+            this.Slaves.Name = "Slaves";
+            this.Slaves.Width = 125;
+            // 
+            // ManualFabricator
+            // 
+            this.ManualFabricator.HeaderText = "Manual Fabricator";
+            this.ManualFabricator.MinimumWidth = 6;
+            this.ManualFabricator.Name = "ManualFabricator";
+            this.ManualFabricator.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ManualFabricator.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ManualFabricator.Width = 125;
+            // 
+            // Fonator
+            // 
+            this.Fonator.HeaderText = "F o nator";
+            this.Fonator.MinimumWidth = 6;
+            this.Fonator.Name = "Fonator";
+            this.Fonator.Width = 125;
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -143,7 +175,8 @@ namespace F_Clicker
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
             this.openToolStripMenuItem,
-            this.autoSaveToolStripMenuItem});
+            this.autoSaveToolStripMenuItem,
+            this.checkForUpdatesToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
@@ -151,14 +184,14 @@ namespace F_Clicker
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -166,9 +199,38 @@ namespace F_Clicker
             // 
             this.autoSaveToolStripMenuItem.Name = "autoSaveToolStripMenuItem";
             this.autoSaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.autoSaveToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.autoSaveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.autoSaveToolStripMenuItem.Text = "AutoSave";
             this.autoSaveToolStripMenuItem.Click += new System.EventHandler(this.autoSaveToolStripMenuItem_Click);
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autoSaveONToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // autoSaveONToolStripMenuItem
+            // 
+            this.autoSaveONToolStripMenuItem.Name = "autoSaveONToolStripMenuItem";
+            this.autoSaveONToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.autoSaveONToolStripMenuItem.Text = "Auto-Save (ON)";
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.devToolsToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // devToolsToolStripMenuItem
+            // 
+            this.devToolsToolStripMenuItem.Name = "devToolsToolStripMenuItem";
+            this.devToolsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.devToolsToolStripMenuItem.Text = "Dev Tools";
+            this.devToolsToolStripMenuItem.Click += new System.EventHandler(this.devToolsToolStripMenuItem_Click);
             // 
             // masterwriter
             // 
@@ -198,65 +260,11 @@ namespace F_Clicker
             this.playtime.Interval = 1;
             this.playtime.Tick += new System.EventHandler(this.playtime_Tick);
             // 
-            // optionsToolStripMenuItem
+            // checkForUpdatesToolStripMenuItem
             // 
-            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.autoSaveONToolStripMenuItem});
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
-            this.optionsToolStripMenuItem.Text = "Options";
-            // 
-            // autoSaveONToolStripMenuItem
-            // 
-            this.autoSaveONToolStripMenuItem.Name = "autoSaveONToolStripMenuItem";
-            this.autoSaveONToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.autoSaveONToolStripMenuItem.Text = "Auto-Save (ON)";
-            // 
-            // toolsToolStripMenuItem
-            // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.devToolsToolStripMenuItem});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
-            this.toolsToolStripMenuItem.Text = "Tools";
-            // 
-            // devToolsToolStripMenuItem
-            // 
-            this.devToolsToolStripMenuItem.Name = "devToolsToolStripMenuItem";
-            this.devToolsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.devToolsToolStripMenuItem.Text = "Dev Tools";
-            this.devToolsToolStripMenuItem.Click += new System.EventHandler(this.devToolsToolStripMenuItem_Click);
-            // 
-            // Mouse
-            // 
-            this.Mouse.HeaderText = "Mouse";
-            this.Mouse.MinimumWidth = 6;
-            this.Mouse.Name = "Mouse";
-            this.Mouse.Text = "";
-            this.Mouse.Width = 125;
-            // 
-            // Slaves
-            // 
-            this.Slaves.HeaderText = "Slaves";
-            this.Slaves.MinimumWidth = 6;
-            this.Slaves.Name = "Slaves";
-            this.Slaves.Width = 125;
-            // 
-            // ManualFabricator
-            // 
-            this.ManualFabricator.HeaderText = "Manual Fabricator";
-            this.ManualFabricator.MinimumWidth = 6;
-            this.ManualFabricator.Name = "ManualFabricator";
-            this.ManualFabricator.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ManualFabricator.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ManualFabricator.Width = 125;
-            // 
-            // Fonator
-            // 
-            this.Fonator.HeaderText = "F o nator";
-            this.Fonator.MinimumWidth = 6;
-            this.Fonator.Name = "Fonator";
-            this.Fonator.Width = 125;
+            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.checkForUpdatesToolStripMenuItem.Text = "Check For Updates";
             // 
             // Form1
             // 
@@ -312,6 +320,7 @@ namespace F_Clicker
         private System.Windows.Forms.DataGridViewButtonColumn Slaves;
         private System.Windows.Forms.DataGridViewButtonColumn ManualFabricator;
         private System.Windows.Forms.DataGridViewButtonColumn Fonator;
+        private System.Windows.Forms.ToolStripMenuItem checkForUpdatesToolStripMenuItem;
     }
 }
 
