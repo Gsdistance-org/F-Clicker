@@ -24,9 +24,9 @@ namespace F_Clicker
         string saveloc;
         int mousegetted = 0;
         int fonatorgetted = 0;
-        double fonatorfneed = 1;
+        double fonatorfneed = 90;
         int manufabrigetted = 1;
-        double manufabrifneed = 1;
+        double manufabrifneed = 50;
         public Form1()
         {
             InitializeComponent();
@@ -92,9 +92,9 @@ namespace F_Clicker
             }
             if (upgrades.Columns[e.ColumnIndex].Name == "ManualFabricator")
             {
-                if (Fs > fonatorfneed)
+                if (Fs > manufabrifneed)
                 {
-                    Fpc += 1;
+                    Fpc += 10;
                     manufabrifneed *= 1.5;
                     Fs -= manufabrifneed;
                     manufabrigetted++;
