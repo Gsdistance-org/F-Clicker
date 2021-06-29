@@ -51,6 +51,7 @@ namespace F_Clicker
             this.ManualFabricator = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Fonator = new System.Windows.Forms.DataGridViewButtonColumn();
             this.correcter = new System.Windows.Forms.Timer(this.components);
+            this.playtime = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upgrades)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -206,6 +207,11 @@ namespace F_Clicker
             this.correcter.Interval = 1;
             this.correcter.Tick += new System.EventHandler(this.correcter_Tick);
             // 
+            // playtime
+            // 
+            this.playtime.Enabled = true;
+            this.playtime.Interval = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -254,6 +260,7 @@ namespace F_Clicker
         private System.Windows.Forms.DataGridViewButtonColumn ManualFabricator;
         private System.Windows.Forms.DataGridViewButtonColumn Fonator;
         private System.Windows.Forms.Timer correcter;
+        private System.Windows.Forms.Timer playtime;
     }
 }
 
