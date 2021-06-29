@@ -48,6 +48,7 @@ namespace F_Clicker
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.psticker = new System.Windows.Forms.Timer(this.components);
             this.Mouse = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ManualFabricator = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Fonator = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upgrades)).BeginInit();
@@ -91,6 +92,7 @@ namespace F_Clicker
             this.upgrades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.upgrades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Mouse,
+            this.ManualFabricator,
             this.Fonator});
             this.upgrades.Location = new System.Drawing.Point(12, 363);
             this.upgrades.Name = "upgrades";
@@ -181,6 +183,15 @@ namespace F_Clicker
             this.Mouse.Text = "";
             this.Mouse.Width = 125;
             // 
+            // ManualFabricator
+            // 
+            this.ManualFabricator.HeaderText = "Manual Fabricator";
+            this.ManualFabricator.MinimumWidth = 6;
+            this.ManualFabricator.Name = "ManualFabricator";
+            this.ManualFabricator.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ManualFabricator.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ManualFabricator.Width = 125;
+            // 
             // Fonator
             // 
             this.Fonator.HeaderText = "F o nator";
@@ -233,6 +244,7 @@ namespace F_Clicker
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Timer psticker;
         private System.Windows.Forms.DataGridViewButtonColumn Mouse;
+        private System.Windows.Forms.DataGridViewButtonColumn ManualFabricator;
         private System.Windows.Forms.DataGridViewButtonColumn Fonator;
     }
 }

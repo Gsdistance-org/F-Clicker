@@ -14,17 +14,19 @@ namespace F_Clicker
     public partial class Form1 : Form
     {
         static string ver = "1.0.0beta";
-        string[] master = new string[9];
+        string[] master = new string[13];
         double Fs = 0;
         double Fpc = 1;
         double Fps = 0;
-        double mousefneed = 1;
-        static int upgradenum = 1;
+        double mousefneed = 5;
+        static int upgradenum = 3;
         string fcename = "New";
         string saveloc;
         int mousegetted = 0;
         int fonatorgetted = 0;
         double fonatorfneed = 1;
+        int manufabrigetted = 1;
+        double manufabrifneed = 1;
         public Form1()
         {
             InitializeComponent();
@@ -88,6 +90,24 @@ namespace F_Clicker
                     }
                 }
             }
+            if (upgrades.Columns[e.ColumnIndex].Name == "ManualFabricator")
+            {
+                if (Fs > fonatorfneed)
+                {
+                    Fpc += 1;
+                    manufabrifneed *= 1.5;
+                    Fs -= manufabrifneed;
+                    manufabrigetted++;
+                }
+                else
+                {
+                    MessageBox.Show("You Need" + " (" + (manufabrifneed - Fs) + ") " + "More F's");
+                    if (MessageBox.Show("Do you want to Go to Shop?", "Shop", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        MessageBox.Show("Going to shop...", "Shop");
+                    }
+                }
+            }
         }
 
         private void needswrite_Tick(object sender, EventArgs e)
@@ -108,6 +128,10 @@ namespace F_Clicker
                 master[6] = "Time Played";
                 master[7] = Convert.ToString(mousegetted);
                 master[8] = Convert.ToString(Fps);
+                master[9] = Convert.ToString(fonatorfneed);
+                master[10] = Convert.ToString(fonatorgetted);
+                master[11] = Convert.ToString(manufabrifneed);
+                master[12] = Convert.ToString(manufabrigetted);
                 saveFileDialog1.Filter = "F clicker save files (*.fcsave) | *.fcsave";
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
@@ -139,6 +163,10 @@ namespace F_Clicker
                 master[6] = "Time Played";
                 master[7] = Convert.ToString(mousegetted);
                 master[8] = Convert.ToString(Fps);
+                master[9] = Convert.ToString(fonatorfneed);
+                master[10] = Convert.ToString(fonatorgetted);
+                master[11] = Convert.ToString(manufabrifneed);
+                master[12] = Convert.ToString(manufabrigetted);
                 if (string.IsNullOrEmpty(saveloc))
                 {
                     MessageBox.Show("You need to save first");
@@ -172,6 +200,10 @@ namespace F_Clicker
                     mousefneed = Convert.ToDouble(master[3]);
                     mousegetted = Convert.ToInt32(master[7]);
                     Fps = Convert.ToDouble(master[8]);
+                    fonatorfneed = Convert.ToDouble(master[9]);
+                    fonatorgetted = Convert.ToInt32(master[10]);
+                    manufabrifneed = Convert.ToDouble(master[11]);
+                    manufabrigetted = Convert.ToInt32(master[12]);
                 }
             }
             catch(Exception ex)
