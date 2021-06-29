@@ -14,7 +14,7 @@ namespace F_Clicker
     public partial class Form1 : Form
     {
         static string ver = "1.0.0";
-        string[] master = new string[13];
+        string[] master = new string[14];
         double Fs = 0;
         double Fpc = 1;
         double Fps = 0;
@@ -27,6 +27,7 @@ namespace F_Clicker
         double fonatorfneed = 90;
         int manufabrigetted = 1;
         double manufabrifneed = 50;
+        double multiplyer = 1;
         public Form1()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace F_Clicker
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Fs += Fpc;
+            Fs += Fpc * multiplyer;
         }
 
         private void repaet_Tick(object sender, EventArgs e)
@@ -132,6 +133,7 @@ namespace F_Clicker
                 master[10] = Convert.ToString(fonatorgetted);
                 master[11] = Convert.ToString(manufabrifneed);
                 master[12] = Convert.ToString(manufabrigetted);
+                master[13] = Convert.ToString(multiplyer);
                 saveFileDialog1.Filter = "F clicker save files (*.fcsave) | *.fcsave";
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
@@ -167,6 +169,7 @@ namespace F_Clicker
                 master[10] = Convert.ToString(fonatorgetted);
                 master[11] = Convert.ToString(manufabrifneed);
                 master[12] = Convert.ToString(manufabrigetted);
+                master[13] = Convert.ToString(multiplyer);
                 if (string.IsNullOrEmpty(saveloc))
                 {
                     MessageBox.Show("You need to save first");
@@ -204,6 +207,7 @@ namespace F_Clicker
                     fonatorgetted = Convert.ToInt32(master[10]);
                     manufabrifneed = Convert.ToDouble(master[11]);
                     manufabrigetted = Convert.ToInt32(master[12]);
+                    multiplyer = Convert.ToDouble(master[13]);
                 }
             }
             catch(Exception ex)
@@ -229,7 +233,7 @@ namespace F_Clicker
 
         private void psticker_Tick(object sender, EventArgs e)
         {
-            Fs += Fps;
+            Fs += Fps * multiplyer;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
