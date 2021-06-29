@@ -13,8 +13,8 @@ namespace F_Clicker
 {
     public partial class Form1 : Form
     {
-        static string ver = "1.0.1";
-        string[] master = new string[26];
+        static string ver = "1.0.2";
+        string[] master = new string[28];
         double Fs = 0;
         double Fpc = 1;
         double Fps = 0;
@@ -35,6 +35,8 @@ namespace F_Clicker
         double corrected = 0;
         int timertimemili, timertimesec, timertimedk, timertimehour, timertimeday, timertimeyear = 0;
         string autosave = "Auto-Save (ON)";
+        int slavesgetted = 0;
+        double slavesfneed = 100;
         public Form1()
         {
             InitializeComponent();
@@ -120,10 +122,10 @@ namespace F_Clicker
             {
                 if (Fs > manufabrifneed)
                 {
-                    Fpc += 10;
-                    manufabrifneed *= 1.5;
-                    Fs -= manufabrifneed;
-                    manufabrigetted++;
+                    Fpc += 20;
+                    slavesfneed *= 1.5;
+                    Fs -= slavesfneed;
+                    slavesgetted++;
                 }
                 else
                 {
@@ -171,6 +173,8 @@ namespace F_Clicker
                 master[23] = Convert.ToString(timertimeday);
                 master[24] = Convert.ToString(timertimeyear);
                 master[25] = (autosave);
+                master[26] = Convert.ToString(slavesfneed);
+                master[27] = Convert.ToString(slavesgetted);
                 saveFileDialog1.Filter = "F clicker save files (*.fcsave) | *.fcsave";
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
@@ -219,6 +223,8 @@ namespace F_Clicker
                 master[23] = Convert.ToString(timertimeday);
                 master[24] = Convert.ToString(timertimeyear);
                 master[25] = (autosave);
+                master[26] = Convert.ToString(slavesfneed);
+                master[27] = Convert.ToString(slavesgetted);
                 if (string.IsNullOrEmpty(saveloc))
                 {
                     MessageBox.Show("You need to save first");
@@ -269,6 +275,8 @@ namespace F_Clicker
                     timertimeday = Convert.ToInt32(master[23]);
                     timertimeyear = Convert.ToInt32(master[24]);
                     autosave = (master[25]);
+                    slavesfneed = Convert.ToDouble(master[26]);
+                    slavesgetted = Convert.ToInt32(master[27]);
                     saveloc = openFileDialog1.FileName;
                 }
             }
@@ -350,6 +358,8 @@ namespace F_Clicker
                     master[23] = Convert.ToString(timertimeday);
                     master[24] = Convert.ToString(timertimeyear);
                     master[25] = (autosave);
+                    master[26] = Convert.ToString(slavesfneed);
+                    master[27] = Convert.ToString(slavesgetted);
                     if (string.IsNullOrEmpty(saveloc))
                     {
                         
