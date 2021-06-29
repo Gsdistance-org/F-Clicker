@@ -36,6 +36,9 @@ namespace F_Clicker
             this.repaet = new System.Windows.Forms.Timer(this.components);
             this.savetimertick = new System.Windows.Forms.Timer(this.components);
             this.upgrades = new System.Windows.Forms.DataGridView();
+            this.Mouse = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ManualFabricator = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Fonator = new System.Windows.Forms.DataGridViewButtonColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.needswrite = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -47,11 +50,10 @@ namespace F_Clicker
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.psticker = new System.Windows.Forms.Timer(this.components);
-            this.Mouse = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ManualFabricator = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Fonator = new System.Windows.Forms.DataGridViewButtonColumn();
             this.correcter = new System.Windows.Forms.Timer(this.components);
             this.playtime = new System.Windows.Forms.Timer(this.components);
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoSaveONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upgrades)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -86,7 +88,8 @@ namespace F_Clicker
             // 
             // savetimertick
             // 
-            this.savetimertick.Interval = 1;
+            this.savetimertick.Interval = 1000;
+            this.savetimertick.Tick += new System.EventHandler(this.savetimertick_Tick);
             // 
             // upgrades
             // 
@@ -103,79 +106,6 @@ namespace F_Clicker
             this.upgrades.Size = new System.Drawing.Size(776, 75);
             this.upgrades.TabIndex = 2;
             this.upgrades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.upgrades_CellContentClick);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 336);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(130, 21);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Show Upgrades";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // needswrite
-            // 
-            this.needswrite.Tick += new System.EventHandler(this.needswrite_Tick);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.autoSaveToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
-            // autoSaveToolStripMenuItem
-            // 
-            this.autoSaveToolStripMenuItem.Name = "autoSaveToolStripMenuItem";
-            this.autoSaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.autoSaveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.autoSaveToolStripMenuItem.Text = "AutoSave";
-            this.autoSaveToolStripMenuItem.Click += new System.EventHandler(this.autoSaveToolStripMenuItem_Click);
-            // 
-            // masterwriter
-            // 
-            this.masterwriter.Interval = 1;
-            this.masterwriter.Tick += new System.EventHandler(this.masterwriter_Tick);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // psticker
-            // 
-            this.psticker.Enabled = true;
-            this.psticker.Interval = 1000;
-            this.psticker.Tick += new System.EventHandler(this.psticker_Tick);
             // 
             // Mouse
             // 
@@ -201,6 +131,80 @@ namespace F_Clicker
             this.Fonator.Name = "Fonator";
             this.Fonator.Width = 125;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(12, 336);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(130, 21);
+            this.checkBox1.TabIndex = 3;
+            this.checkBox1.Text = "Show Upgrades";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // needswrite
+            // 
+            this.needswrite.Tick += new System.EventHandler(this.needswrite_Tick);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.optionsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.openToolStripMenuItem,
+            this.autoSaveToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // autoSaveToolStripMenuItem
+            // 
+            this.autoSaveToolStripMenuItem.Name = "autoSaveToolStripMenuItem";
+            this.autoSaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.autoSaveToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.autoSaveToolStripMenuItem.Text = "AutoSave";
+            this.autoSaveToolStripMenuItem.Click += new System.EventHandler(this.autoSaveToolStripMenuItem_Click);
+            // 
+            // masterwriter
+            // 
+            this.masterwriter.Interval = 1;
+            this.masterwriter.Tick += new System.EventHandler(this.masterwriter_Tick);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // psticker
+            // 
+            this.psticker.Enabled = true;
+            this.psticker.Interval = 1000;
+            this.psticker.Tick += new System.EventHandler(this.psticker_Tick);
+            // 
             // correcter
             // 
             this.correcter.Enabled = true;
@@ -212,6 +216,20 @@ namespace F_Clicker
             this.playtime.Enabled = true;
             this.playtime.Interval = 1;
             this.playtime.Tick += new System.EventHandler(this.playtime_Tick);
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autoSaveONToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // autoSaveONToolStripMenuItem
+            // 
+            this.autoSaveONToolStripMenuItem.Name = "autoSaveONToolStripMenuItem";
+            this.autoSaveONToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.autoSaveONToolStripMenuItem.Text = "Auto-Save (ON)";
             // 
             // Form1
             // 
@@ -262,6 +280,8 @@ namespace F_Clicker
         private System.Windows.Forms.DataGridViewButtonColumn Fonator;
         private System.Windows.Forms.Timer correcter;
         private System.Windows.Forms.Timer playtime;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autoSaveONToolStripMenuItem;
     }
 }
 

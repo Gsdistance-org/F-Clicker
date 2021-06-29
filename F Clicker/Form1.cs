@@ -14,7 +14,7 @@ namespace F_Clicker
     public partial class Form1 : Form
     {
         static string ver = "1.0.0";
-        string[] master = new string[19];
+        string[] master = new string[26];
         double Fs = 0;
         double Fpc = 1;
         double Fps = 0;
@@ -33,7 +33,8 @@ namespace F_Clicker
         double level = 1;
         double ssdss = 404;
         double corrected = 0;
-        int timertimemili, timertimesec, timertimedk, timertimehour, timertimeday, timertimemonth, timertimeyear = 0;
+        int timertimemili, timertimesec, timertimedk, timertimehour, timertimeday, timertimeyear = 0;
+        string autosave = "Auto-Save (ON)";
         public Form1()
         {
             InitializeComponent();
@@ -126,13 +127,13 @@ namespace F_Clicker
         {
             try
             {
-                master[0] = fcename;
+                master[0] = (fcename);
                 master[1] = Convert.ToString(Fs);
                 master[2] = Convert.ToString(Fpc);
                 master[3] = Convert.ToString(mousefneed);
                 master[4] = Convert.ToString(ver);
                 master[5] = Convert.ToString(upgradenum);
-                master[6] = "Time Played";
+                master[6] = ("Time Played");
                 master[7] = Convert.ToString(mousegetted);
                 master[8] = Convert.ToString(Fps);
                 master[9] = Convert.ToString(fonatorfneed);
@@ -145,6 +146,13 @@ namespace F_Clicker
                 master[16] = Convert.ToString(level);
                 master[17] = Convert.ToString(ssdss);
                 master[18] = Convert.ToString(corrected);
+                master[19] = Convert.ToString(timertimemili);
+                master[20] = Convert.ToString(timertimesec);
+                master[21] = Convert.ToString(timertimedk);
+                master[22] = Convert.ToString(timertimehour);
+                master[23] = Convert.ToString(timertimeday);
+                master[24] = Convert.ToString(timertimeyear);
+                master[25] = (autosave);
                 saveFileDialog1.Filter = "F clicker save files (*.fcsave) | *.fcsave";
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
@@ -167,13 +175,13 @@ namespace F_Clicker
         {
             try
             {
-                master[0] = fcename;
+                master[0] = (fcename);
                 master[1] = Convert.ToString(Fs);
                 master[2] = Convert.ToString(Fpc);
                 master[3] = Convert.ToString(mousefneed);
                 master[4] = Convert.ToString(ver);
                 master[5] = Convert.ToString(upgradenum);
-                master[6] = "Time Played";
+                master[6] = ("Time Played");
                 master[7] = Convert.ToString(mousegetted);
                 master[8] = Convert.ToString(Fps);
                 master[9] = Convert.ToString(fonatorfneed);
@@ -186,6 +194,13 @@ namespace F_Clicker
                 master[16] = Convert.ToString(level);
                 master[17] = Convert.ToString(ssdss);
                 master[18] = Convert.ToString(corrected);
+                master[19] = Convert.ToString(timertimemili);
+                master[20] = Convert.ToString(timertimesec);
+                master[21] = Convert.ToString(timertimedk);
+                master[22] = Convert.ToString(timertimehour);
+                master[23] = Convert.ToString(timertimeday);
+                master[24] = Convert.ToString(timertimeyear);
+                master[25] = (autosave);
                 if (string.IsNullOrEmpty(saveloc))
                 {
                     MessageBox.Show("You need to save first");
@@ -229,6 +244,13 @@ namespace F_Clicker
                     level = Convert.ToDouble(master[16]);
                     ssdss = Convert.ToDouble(master[17]);
                     corrected = Convert.ToDouble(master[18]);
+                    timertimemili = Convert.ToInt32(master[19]);
+                    timertimesec = Convert.ToInt32(master[20]);
+                    timertimedk = Convert.ToInt32(master[21]);
+                    timertimehour = Convert.ToInt32(master[22]);
+                    timertimeday = Convert.ToInt32(master[23]);
+                    timertimeyear = Convert.ToInt32(master[24]);
+                    autosave = (master[25]);
                 }
             }
             catch(Exception ex)
@@ -275,6 +297,63 @@ namespace F_Clicker
         private void masterwriter_Tick(object sender, EventArgs e)
         {
             
+        }
+
+        private void savetimertick_Tick(object sender, EventArgs e)
+        {
+            if (autosave == "Auto-Save (ON)")
+            {
+                try
+                {
+                    master[0] = (fcename);
+                    master[1] = Convert.ToString(Fs);
+                    master[2] = Convert.ToString(Fpc);
+                    master[3] = Convert.ToString(mousefneed);
+                    master[4] = Convert.ToString(ver);
+                    master[5] = Convert.ToString(upgradenum);
+                    master[6] = ("Time Played");
+                    master[7] = Convert.ToString(mousegetted);
+                    master[8] = Convert.ToString(Fps);
+                    master[9] = Convert.ToString(fonatorfneed);
+                    master[10] = Convert.ToString(fonatorgetted);
+                    master[11] = Convert.ToString(manufabrifneed);
+                    master[12] = Convert.ToString(manufabrigetted);
+                    master[13] = Convert.ToString(multiplyer);
+                    master[14] = Convert.ToString(rebirts);
+                    master[15] = Convert.ToString(xp);
+                    master[16] = Convert.ToString(level);
+                    master[17] = Convert.ToString(ssdss);
+                    master[18] = Convert.ToString(corrected);
+                    master[19] = Convert.ToString(timertimemili);
+                    master[20] = Convert.ToString(timertimesec);
+                    master[21] = Convert.ToString(timertimedk);
+                    master[22] = Convert.ToString(timertimehour);
+                    master[23] = Convert.ToString(timertimeday);
+                    master[24] = Convert.ToString(timertimeyear);
+                    master[25] = (autosave);
+                    if (string.IsNullOrEmpty(saveloc))
+                    {
+                        
+                    }
+                    else
+                    {
+                        File.WriteAllLines(saveloc, master);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    File.WriteAllText(@".\error.error", Convert.ToString(ex));
+                    MessageBox.Show("Error");
+                }
+                finally
+                {
+
+                }
+            }
+            else
+            {
+
+            }
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
