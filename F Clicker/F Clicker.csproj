@@ -93,5 +93,8 @@
   <ItemGroup>
     <Content Include="Flogo.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="updatefiles\1.0.2\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
