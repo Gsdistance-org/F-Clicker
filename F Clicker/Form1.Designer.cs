@@ -211,6 +211,7 @@ namespace F_Clicker
             // 
             this.playtime.Enabled = true;
             this.playtime.Interval = 1;
+            this.playtime.Tick += new System.EventHandler(this.playtime_Tick);
             // 
             // Form1
             // 

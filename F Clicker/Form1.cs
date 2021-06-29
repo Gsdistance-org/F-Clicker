@@ -33,6 +33,7 @@ namespace F_Clicker
         double level = 1;
         double ssdss = 404;
         double corrected = 0;
+        int timertimemili, timertimesec, timertimedk, timertimehour, timertimeday, timertimemonth, timertimeyear = 0;
         public Form1()
         {
             InitializeComponent();
@@ -239,6 +240,36 @@ namespace F_Clicker
             {
                 
             }
+        }
+
+        private void playtime_Tick(object sender, EventArgs e)
+        {
+            if (timertimemili > 99)
+            {
+                timertimemili = 0;
+                timertimesec++;
+            }
+            if (timertimesec > 59)
+            {
+                timertimesec = 0;
+                timertimedk++;
+            }
+            if (timertimedk > 59)
+            {
+                timertimedk = 0;
+                timertimehour++;
+            }
+            if (timertimehour > 23)
+            {
+                timertimehour = 0;
+                timertimeday++;
+            }
+            if (timertimeday > 364)
+            {
+                timertimeday = 0;
+                timertimeyear++;
+            }
+            timertimemili++;
         }
 
         private void masterwriter_Tick(object sender, EventArgs e)
