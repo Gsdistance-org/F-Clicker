@@ -116,6 +116,24 @@ namespace F_Clicker
                     }
                 }
             }
+            if (upgrades.Columns[e.ColumnIndex].Name == "Slaves")
+            {
+                if (Fs > manufabrifneed)
+                {
+                    Fpc += 10;
+                    manufabrifneed *= 1.5;
+                    Fs -= manufabrifneed;
+                    manufabrigetted++;
+                }
+                else
+                {
+                    MessageBox.Show("You Need" + " (" + (manufabrifneed - Fs) + ") " + "More F's");
+                    if (MessageBox.Show("Do you want to Go to Shop?", "Shop", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        MessageBox.Show("Going to shop...", "Shop");
+                    }
+                }
+            }
         }
 
         private void needswrite_Tick(object sender, EventArgs e)

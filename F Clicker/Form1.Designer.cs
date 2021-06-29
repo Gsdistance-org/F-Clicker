@@ -36,9 +36,6 @@ namespace F_Clicker
             this.repaet = new System.Windows.Forms.Timer(this.components);
             this.savetimertick = new System.Windows.Forms.Timer(this.components);
             this.upgrades = new System.Windows.Forms.DataGridView();
-            this.Mouse = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ManualFabricator = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Fonator = new System.Windows.Forms.DataGridViewButtonColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.needswrite = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -56,6 +53,10 @@ namespace F_Clicker
             this.autoSaveONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Mouse = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Slaves = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ManualFabricator = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Fonator = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upgrades)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -99,6 +100,7 @@ namespace F_Clicker
             this.upgrades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.upgrades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Mouse,
+            this.Slaves,
             this.ManualFabricator,
             this.Fonator});
             this.upgrades.Location = new System.Drawing.Point(12, 363);
@@ -108,30 +110,6 @@ namespace F_Clicker
             this.upgrades.Size = new System.Drawing.Size(776, 75);
             this.upgrades.TabIndex = 2;
             this.upgrades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.upgrades_CellContentClick);
-            // 
-            // Mouse
-            // 
-            this.Mouse.HeaderText = "Mouse";
-            this.Mouse.MinimumWidth = 6;
-            this.Mouse.Name = "Mouse";
-            this.Mouse.Text = "";
-            this.Mouse.Width = 125;
-            // 
-            // ManualFabricator
-            // 
-            this.ManualFabricator.HeaderText = "Manual Fabricator";
-            this.ManualFabricator.MinimumWidth = 6;
-            this.ManualFabricator.Name = "ManualFabricator";
-            this.ManualFabricator.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ManualFabricator.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ManualFabricator.Width = 125;
-            // 
-            // Fonator
-            // 
-            this.Fonator.HeaderText = "F o nator";
-            this.Fonator.MinimumWidth = 6;
-            this.Fonator.Name = "Fonator";
-            this.Fonator.Width = 125;
             // 
             // checkBox1
             // 
@@ -249,6 +227,37 @@ namespace F_Clicker
             this.devToolsToolStripMenuItem.Text = "Dev Tools";
             this.devToolsToolStripMenuItem.Click += new System.EventHandler(this.devToolsToolStripMenuItem_Click);
             // 
+            // Mouse
+            // 
+            this.Mouse.HeaderText = "Mouse";
+            this.Mouse.MinimumWidth = 6;
+            this.Mouse.Name = "Mouse";
+            this.Mouse.Text = "";
+            this.Mouse.Width = 125;
+            // 
+            // Slaves
+            // 
+            this.Slaves.HeaderText = "Slaves";
+            this.Slaves.MinimumWidth = 6;
+            this.Slaves.Name = "Slaves";
+            this.Slaves.Width = 125;
+            // 
+            // ManualFabricator
+            // 
+            this.ManualFabricator.HeaderText = "Manual Fabricator";
+            this.ManualFabricator.MinimumWidth = 6;
+            this.ManualFabricator.Name = "ManualFabricator";
+            this.ManualFabricator.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ManualFabricator.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ManualFabricator.Width = 125;
+            // 
+            // Fonator
+            // 
+            this.Fonator.HeaderText = "F o nator";
+            this.Fonator.MinimumWidth = 6;
+            this.Fonator.Name = "Fonator";
+            this.Fonator.Width = 125;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -293,15 +302,16 @@ namespace F_Clicker
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Timer psticker;
-        private System.Windows.Forms.DataGridViewButtonColumn Mouse;
-        private System.Windows.Forms.DataGridViewButtonColumn ManualFabricator;
-        private System.Windows.Forms.DataGridViewButtonColumn Fonator;
         private System.Windows.Forms.Timer correcter;
         private System.Windows.Forms.Timer playtime;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autoSaveONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem devToolsToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewButtonColumn Mouse;
+        private System.Windows.Forms.DataGridViewButtonColumn Slaves;
+        private System.Windows.Forms.DataGridViewButtonColumn ManualFabricator;
+        private System.Windows.Forms.DataGridViewButtonColumn Fonator;
     }
 }
 
