@@ -184,5 +184,10 @@ namespace F_Clicker
         {
             File.Delete(@".\fneeds.mem");
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

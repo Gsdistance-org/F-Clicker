@@ -193,6 +193,7 @@ namespace F_Clicker
             this.Name = "Form1";
             this.Text = "F clicker";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upgrades)).EndInit();
             this.menuStrip1.ResumeLayout(false);
