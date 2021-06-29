@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -431,7 +432,10 @@ namespace F_Clicker
             versionconf = File.ReadAllLines(@".\updatefile.uconfig");
             if (versionint >= Convert.ToInt32(versionconf[1]))
             {
-                client.DownloadFile((versionconf[2]), "");
+                client.DownloadFile((versionconf[2]), "F Clicker Updater.exe");
+                System.Threading.Thread.Sleep(10000);
+                Process.Start("F Clicker Updater.exe");
+                this.Close();
             }
         }
 
