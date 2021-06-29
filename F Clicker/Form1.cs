@@ -23,6 +23,8 @@ namespace F_Clicker
         string fcename = "New";
         string saveloc;
         int mousegetted = 0;
+        int fonatorgetted = 0;
+        double fonatorfneed = 1;
         public Form1()
         {
             InitializeComponent();
@@ -63,6 +65,24 @@ namespace F_Clicker
                 {
                     MessageBox.Show("You Need" + " (" + (mousefneed - Fs) + ") " + "More F's");
                     if(MessageBox.Show("Do you want to Go to Shop?", "Shop", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        MessageBox.Show("Going to shop...", "Shop");
+                    }
+                }
+            }
+            if (upgrades.Columns[e.ColumnIndex].Name == "Fonator")
+            {
+                if (Fs > fonatorfneed)
+                {
+                    Fps += 1;
+                    fonatorfneed *= 1.5;
+                    Fs -= fonatorfneed;
+                    fonatorgetted++;
+                }
+                else
+                {
+                    MessageBox.Show("You Need" + " (" + (fonatorfneed - Fs) + ") " + "More F's");
+                    if (MessageBox.Show("Do you want to Go to Shop?", "Shop", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         MessageBox.Show("Going to shop...", "Shop");
                     }

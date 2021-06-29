@@ -36,7 +36,6 @@ namespace F_Clicker
             this.repaet = new System.Windows.Forms.Timer(this.components);
             this.savetimertick = new System.Windows.Forms.Timer(this.components);
             this.upgrades = new System.Windows.Forms.DataGridView();
-            this.Mouse = new System.Windows.Forms.DataGridViewButtonColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.needswrite = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -48,6 +47,8 @@ namespace F_Clicker
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.psticker = new System.Windows.Forms.Timer(this.components);
+            this.Mouse = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Fonator = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upgrades)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -89,27 +90,20 @@ namespace F_Clicker
             this.upgrades.AllowUserToOrderColumns = true;
             this.upgrades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.upgrades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Mouse});
-            this.upgrades.Location = new System.Drawing.Point(551, 12);
+            this.Mouse,
+            this.Fonator});
+            this.upgrades.Location = new System.Drawing.Point(12, 363);
             this.upgrades.Name = "upgrades";
             this.upgrades.RowHeadersWidth = 51;
             this.upgrades.RowTemplate.Height = 24;
-            this.upgrades.Size = new System.Drawing.Size(237, 426);
+            this.upgrades.Size = new System.Drawing.Size(776, 75);
             this.upgrades.TabIndex = 2;
             this.upgrades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.upgrades_CellContentClick);
-            // 
-            // Mouse
-            // 
-            this.Mouse.HeaderText = "Mouse";
-            this.Mouse.MinimumWidth = 6;
-            this.Mouse.Name = "Mouse";
-            this.Mouse.Text = "";
-            this.Mouse.Width = 125;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(415, 12);
+            this.checkBox1.Location = new System.Drawing.Point(12, 336);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(130, 21);
             this.checkBox1.TabIndex = 3;
@@ -158,6 +152,7 @@ namespace F_Clicker
             // autoSaveToolStripMenuItem
             // 
             this.autoSaveToolStripMenuItem.Name = "autoSaveToolStripMenuItem";
+            this.autoSaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.autoSaveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.autoSaveToolStripMenuItem.Text = "AutoSave";
             this.autoSaveToolStripMenuItem.Click += new System.EventHandler(this.autoSaveToolStripMenuItem_Click);
@@ -175,7 +170,23 @@ namespace F_Clicker
             // psticker
             // 
             this.psticker.Enabled = true;
+            this.psticker.Interval = 1000;
             this.psticker.Tick += new System.EventHandler(this.psticker_Tick);
+            // 
+            // Mouse
+            // 
+            this.Mouse.HeaderText = "Mouse";
+            this.Mouse.MinimumWidth = 6;
+            this.Mouse.Name = "Mouse";
+            this.Mouse.Text = "";
+            this.Mouse.Width = 125;
+            // 
+            // Fonator
+            // 
+            this.Fonator.HeaderText = "F o nator";
+            this.Fonator.MinimumWidth = 6;
+            this.Fonator.Name = "Fonator";
+            this.Fonator.Width = 125;
             // 
             // Form1
             // 
@@ -211,7 +222,6 @@ namespace F_Clicker
         private System.Windows.Forms.Timer savetimertick;
         private System.Windows.Forms.DataGridView upgrades;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DataGridViewButtonColumn Mouse;
         private System.Windows.Forms.Timer needswrite;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -222,6 +232,8 @@ namespace F_Clicker
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Timer psticker;
+        private System.Windows.Forms.DataGridViewButtonColumn Mouse;
+        private System.Windows.Forms.DataGridViewButtonColumn Fonator;
     }
 }
 
