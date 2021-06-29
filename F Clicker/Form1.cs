@@ -251,6 +251,7 @@ namespace F_Clicker
                     timertimeday = Convert.ToInt32(master[23]);
                     timertimeyear = Convert.ToInt32(master[24]);
                     autosave = (master[25]);
+                    saveloc = openFileDialog1.FileName;
                 }
             }
             catch(Exception ex)
