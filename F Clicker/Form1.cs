@@ -48,6 +48,7 @@ namespace F_Clicker
         int multskilllevel = 0;
         bool multskillisbuyed = false;
         bool changefscolorscheme = true;
+        int fcolorscheme = 1;
         public Form1()
         {
             InitializeComponent();
@@ -56,6 +57,10 @@ namespace F_Clicker
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Fs += Fpc * multiplyer;
+            if (changefscolorscheme)
+            {
+                fcolorscheme++;
+            }
         }
 
         private void repaet_Tick(object sender, EventArgs e)
@@ -499,6 +504,42 @@ namespace F_Clicker
                 {
                     MessageBox.Show("You need (" + (multskillfneed - Fs) + ") More Fs To Do That");
                 }
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Fs += Fpc * multiplyer;
+            if (changefscolorscheme)
+            {
+                fcolorscheme++;
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Fs += Fpc * multiplyer;
+            if (changefscolorscheme)
+            {
+                fcolorscheme++;
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Fs += Fpc * multiplyer;
+            if (changefscolorscheme)
+            {
+                fcolorscheme++;
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Fs += Fpc * multiplyer;
+            if (changefscolorscheme)
+            {
+                fcolorscheme++;
             }
         }
 
