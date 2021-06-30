@@ -67,7 +67,7 @@ namespace F_Clicker
         {
             if (changefscolorscheme)
             {
-                if(fcolorscheme == 1)
+                if(fcolorscheme > 0 && fcolorscheme < 2)
                 {
                     pictureBox1.Show();
                     pictureBox3.Hide();
@@ -79,7 +79,7 @@ namespace F_Clicker
                     pictureBox9.Hide();
                     pictureBox10.Hide();
                 }
-                if (fcolorscheme == 2)
+                if (fcolorscheme > 1 && fcolorscheme < 3)
                 {
                     pictureBox3.Show();
                     pictureBox1.Hide();
@@ -91,7 +91,7 @@ namespace F_Clicker
                     pictureBox9.Hide();
                     pictureBox10.Hide();
                 }
-                if (fcolorscheme == 3)
+                if (fcolorscheme > 2 && fcolorscheme < 4)
                 {
                     pictureBox4.Show();
                     pictureBox3.Hide();
@@ -103,7 +103,7 @@ namespace F_Clicker
                     pictureBox9.Hide();
                     pictureBox10.Hide();
                 }
-                if (fcolorscheme == 4)
+                if (fcolorscheme > 3 && fcolorscheme < 5)
                 {
                     pictureBox5.Show();
                     pictureBox3.Hide();
@@ -115,7 +115,7 @@ namespace F_Clicker
                     pictureBox9.Hide();
                     pictureBox10.Hide();
                 }
-                if (fcolorscheme == 5)
+                if (fcolorscheme > 4 && fcolorscheme < 6)
                 {
                     pictureBox6.Show();
                     pictureBox3.Hide();
@@ -127,7 +127,7 @@ namespace F_Clicker
                     pictureBox9.Hide();
                     pictureBox10.Hide();
                 }
-                if (fcolorscheme == 6)
+                if (fcolorscheme > 5 && fcolorscheme < 7)
                 {
                     pictureBox7.Show();
                     pictureBox3.Hide();
@@ -139,7 +139,7 @@ namespace F_Clicker
                     pictureBox9.Hide();
                     pictureBox10.Hide();
                 }
-                if (fcolorscheme == 7)
+                if (fcolorscheme > 6 && fcolorscheme < 8)
                 {
                     pictureBox8.Show();
                     pictureBox3.Hide();
@@ -151,7 +151,7 @@ namespace F_Clicker
                     pictureBox9.Hide();
                     pictureBox10.Hide();
                 }
-                if (fcolorscheme == 8)
+                if (fcolorscheme > 7 && fcolorscheme < 9)
                 {
                     pictureBox9.Show();
                     pictureBox3.Hide();
@@ -163,7 +163,7 @@ namespace F_Clicker
                     pictureBox1.Hide();
                     pictureBox10.Hide();
                 }
-                if (fcolorscheme == 9)
+                if (fcolorscheme > 8 && fcolorscheme < 10)
                 {
                     pictureBox10.Show();
                     pictureBox3.Hide();
@@ -175,7 +175,7 @@ namespace F_Clicker
                     pictureBox9.Hide();
                     pictureBox1.Hide();
                 }
-                if (fcolorscheme == 10)
+                if (fcolorscheme > 9 && fcolorscheme < 11)
                 {
                     pictureBox1.Show();
                     pictureBox3.Hide();
@@ -191,18 +191,15 @@ namespace F_Clicker
             }
             else
             {
-                if (fcolorscheme == 1)
-                {
-                    pictureBox1.Show();
-                    pictureBox3.Hide();
-                    pictureBox4.Hide();
-                    pictureBox5.Hide();
-                    pictureBox6.Hide();
-                    pictureBox7.Hide();
-                    pictureBox8.Hide();
-                    pictureBox9.Hide();
-                    pictureBox10.Hide();
-                }
+                pictureBox1.Show();
+                pictureBox3.Hide();
+                pictureBox4.Hide();
+                pictureBox5.Hide();
+                pictureBox6.Hide();
+                pictureBox7.Hide();
+                pictureBox8.Hide();
+                pictureBox9.Hide();
+                pictureBox10.Hide();
             }
             if (rebirtget)
             {
