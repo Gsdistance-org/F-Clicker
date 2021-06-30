@@ -65,6 +65,129 @@ namespace F_Clicker
 
         private void repaet_Tick(object sender, EventArgs e)
         {
+            if (changefscolorscheme)
+            {
+                if(fcolorscheme == 1)
+                {
+                    pictureBox1.Show();
+                    pictureBox3.Hide();
+                    pictureBox4.Hide();
+                    pictureBox5.Hide();
+                    pictureBox6.Hide();
+                    pictureBox7.Hide();
+                    pictureBox8.Hide();
+                    pictureBox9.Hide();
+                    pictureBox10.Hide();
+                }
+                if (fcolorscheme == 2)
+                {
+                    pictureBox3.Show();
+                    pictureBox1.Hide();
+                    pictureBox4.Hide();
+                    pictureBox5.Hide();
+                    pictureBox6.Hide();
+                    pictureBox7.Hide();
+                    pictureBox8.Hide();
+                    pictureBox9.Hide();
+                    pictureBox10.Hide();
+                }
+                if (fcolorscheme == 3)
+                {
+                    pictureBox4.Show();
+                    pictureBox3.Hide();
+                    pictureBox1.Hide();
+                    pictureBox5.Hide();
+                    pictureBox6.Hide();
+                    pictureBox7.Hide();
+                    pictureBox8.Hide();
+                    pictureBox9.Hide();
+                    pictureBox10.Hide();
+                }
+                if (fcolorscheme == 4)
+                {
+                    pictureBox5.Show();
+                    pictureBox3.Hide();
+                    pictureBox4.Hide();
+                    pictureBox1.Hide();
+                    pictureBox6.Hide();
+                    pictureBox7.Hide();
+                    pictureBox8.Hide();
+                    pictureBox9.Hide();
+                    pictureBox10.Hide();
+                }
+                if (fcolorscheme == 5)
+                {
+                    pictureBox6.Show();
+                    pictureBox3.Hide();
+                    pictureBox4.Hide();
+                    pictureBox5.Hide();
+                    pictureBox1.Hide();
+                    pictureBox7.Hide();
+                    pictureBox8.Hide();
+                    pictureBox9.Hide();
+                    pictureBox10.Hide();
+                }
+                if (fcolorscheme == 6)
+                {
+                    pictureBox7.Show();
+                    pictureBox3.Hide();
+                    pictureBox4.Hide();
+                    pictureBox5.Hide();
+                    pictureBox6.Hide();
+                    pictureBox1.Hide();
+                    pictureBox8.Hide();
+                    pictureBox9.Hide();
+                    pictureBox10.Hide();
+                }
+                if (fcolorscheme == 7)
+                {
+                    pictureBox8.Show();
+                    pictureBox3.Hide();
+                    pictureBox4.Hide();
+                    pictureBox5.Hide();
+                    pictureBox6.Hide();
+                    pictureBox7.Hide();
+                    pictureBox1.Hide();
+                    pictureBox9.Hide();
+                    pictureBox10.Hide();
+                }
+                if (fcolorscheme == 8)
+                {
+                    pictureBox9.Show();
+                    pictureBox3.Hide();
+                    pictureBox4.Hide();
+                    pictureBox5.Hide();
+                    pictureBox6.Hide();
+                    pictureBox7.Hide();
+                    pictureBox8.Hide();
+                    pictureBox1.Hide();
+                    pictureBox10.Hide();
+                }
+                if (fcolorscheme == 9)
+                {
+                    pictureBox10.Show();
+                    pictureBox3.Hide();
+                    pictureBox4.Hide();
+                    pictureBox5.Hide();
+                    pictureBox6.Hide();
+                    pictureBox7.Hide();
+                    pictureBox8.Hide();
+                    pictureBox9.Hide();
+                    pictureBox1.Hide();
+                }
+                if (fcolorscheme == 10)
+                {
+                    pictureBox1.Show();
+                    pictureBox3.Hide();
+                    pictureBox4.Hide();
+                    pictureBox5.Hide();
+                    pictureBox6.Hide();
+                    pictureBox7.Hide();
+                    pictureBox8.Hide();
+                    pictureBox9.Hide();
+                    pictureBox10.Hide();
+                }
+            }
             if (rebirtget)
             {
                 if (Fs > rebirtfneed)
@@ -535,6 +658,42 @@ namespace F_Clicker
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Fs += Fpc * multiplyer;
+            if (changefscolorscheme)
+            {
+                fcolorscheme++;
+            }
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            Fs += Fpc * multiplyer;
+            if (changefscolorscheme)
+            {
+                fcolorscheme++;
+            }
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Fs += Fpc * multiplyer;
+            if (changefscolorscheme)
+            {
+                fcolorscheme++;
+            }
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Fs += Fpc * multiplyer;
+            if (changefscolorscheme)
+            {
+                fcolorscheme++;
+            }
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
         {
             Fs += Fpc * multiplyer;
             if (changefscolorscheme)
