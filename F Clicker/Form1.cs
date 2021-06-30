@@ -16,7 +16,7 @@ namespace F_Clicker
     public partial class Form1 : Form
     {
         string[] versionconf = new string[2];
-        static int versionint = 102;
+        static int versionint = 104;
         static string ver = "1.0.4";
         string[] master = new string[34];
         double Fs = 0;
