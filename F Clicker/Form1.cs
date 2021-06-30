@@ -18,7 +18,7 @@ namespace F_Clicker
         string[] versionconf = new string[2];
         static int versionint = 102;
         static string ver = "1.0.2";
-        string[] master = new string[28];
+        string[] master = new string[34];
         double Fs = 0;
         double Fpc = 1;
         double Fps = 0;
@@ -41,6 +41,12 @@ namespace F_Clicker
         string autosave = "Auto-Save (ON)";
         int slavesgetted = 0;
         double slavesfneed = 100;
+        bool skillsshow = false;
+        double rebirtfneed = 1000000;
+        bool rebirtget = false;
+        double multskillfneed = 100000;
+        int multskilllevel = 0;
+        bool multskillisbuyed = false;
         public Form1()
         {
             InitializeComponent();
@@ -53,7 +59,33 @@ namespace F_Clicker
 
         private void repaet_Tick(object sender, EventArgs e)
         {
+            if (rebirtget)
+            {
+                if (Fs > rebirtfneed)
+                {
+                    rebirts++;
+                    rebirtfneed *= 1.5;
+                }
+                else
+                {
+                    MessageBox.Show("You Need" + " (" + (rebirtfneed - Fs) + ") " + "More F's To Rebirt");
+                    if (MessageBox.Show("Do you want to Go to Shop?", "Shop", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        MessageBox.Show("Going to shop...", "Shop");
+                    }
+                }
+            }
+            rebirtcycle.Maximum = Convert.ToInt32(rebirtfneed);
+            rebirtcycle.Value = Convert.ToInt32(Fs);
             label1.Text = "F's:" + Fs;
+            if(Fs > rebirtfneed)
+            {
+                button1.Text = "Rebirt";
+            }
+            else
+            {
+                button1.Text = "Rebirtneeds: " + Fs + "/" + rebirtfneed;
+            }
             if (checkBox1.Checked)
             {
                 upgrades.Show();
@@ -64,6 +96,14 @@ namespace F_Clicker
             }
             string[] fneeds = new string[1] { "Mouse" };
             File.WriteAllLines(@".\fneeds.mem", fneeds);
+            if (skillsshow)
+            {
+                pictureBox2.Show();
+            }
+            else
+            {
+                pictureBox2.Hide();
+            }
         }
 
         private void upgrades_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -179,6 +219,12 @@ namespace F_Clicker
                 master[25] = (autosave);
                 master[26] = Convert.ToString(slavesfneed);
                 master[27] = Convert.ToString(slavesgetted);
+                master[28] = Convert.ToString(skillsshow);
+                master[29] = Convert.ToString(rebirtfneed);
+                master[30] = Convert.ToString(rebirtget);
+                master[31] = Convert.ToString(multskilllevel);
+                master[32] = Convert.ToString(multskillisbuyed);
+                master[33] = Convert.ToString(multskillfneed);
                 saveFileDialog1.Filter = "F clicker save files (*.fcsave) | *.fcsave";
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
@@ -229,6 +275,12 @@ namespace F_Clicker
                 master[25] = (autosave);
                 master[26] = Convert.ToString(slavesfneed);
                 master[27] = Convert.ToString(slavesgetted);
+                master[28] = Convert.ToString(skillsshow);
+                master[29] = Convert.ToString(rebirtfneed);
+                master[30] = Convert.ToString(rebirtget);
+                master[31] = Convert.ToString(multskilllevel);
+                master[32] = Convert.ToString(multskillisbuyed);
+                master[33] = Convert.ToString(multskillfneed);
                 if (string.IsNullOrEmpty(saveloc))
                 {
                     MessageBox.Show("You need to save first");
@@ -281,6 +333,12 @@ namespace F_Clicker
                     autosave = (master[25]);
                     slavesfneed = Convert.ToDouble(master[26]);
                     slavesgetted = Convert.ToInt32(master[27]);
+                    skillsshow = Convert.ToBoolean(master[28]);
+                    rebirtfneed = Convert.ToDouble(master[29]);
+                    rebirtget = Convert.ToBoolean(master[30]);
+                    multskilllevel = Convert.ToInt32(master[31]);
+                    multskillisbuyed = Convert.ToBoolean(master[32]);
+                    multskillfneed = Convert.ToDouble(master[33]);
                     saveloc = openFileDialog1.FileName;
                 }
             }
@@ -364,6 +422,12 @@ namespace F_Clicker
                     master[25] = (autosave);
                     master[26] = Convert.ToString(slavesfneed);
                     master[27] = Convert.ToString(slavesgetted);
+                    master[28] = Convert.ToString(skillsshow);
+                    master[29] = Convert.ToString(rebirtfneed);
+                    master[30] = Convert.ToString(rebirtget);
+                    master[31] = Convert.ToString(multskilllevel);
+                    master[32] = Convert.ToString(multskillisbuyed);
+                    master[33] = Convert.ToString(multskillfneed);
                     if (string.IsNullOrEmpty(saveloc))
                     {
                         
@@ -392,6 +456,49 @@ namespace F_Clicker
         private void devToolsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                skillsshow = true;
+            }
+            else
+            {
+                skillsshow = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (button1.Text == "Rebirt")
+            {
+                rebirtget = true;
+            }
+            else
+            {
+                MessageBox.Show("You need (" + (rebirtfneed - Fs) + ") More Fs To Do That");
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("The multiplyer want to buy?", "Skill Tree", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if(Fs > multskillfneed)
+                {
+                    Fs -= multskillfneed;
+                    multiplyer += 0.1;
+                    multskillisbuyed = true;
+                    multskillfneed *= 1.5;
+                    multskilllevel++;
+                }
+                else
+                {
+                    MessageBox.Show("You need (" + (multskillfneed - Fs) + ") More Fs To Do That");
+                }
+            }
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)

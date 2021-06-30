@@ -47,6 +47,7 @@ namespace F_Clicker
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autoSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autoSaveONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,10 +58,14 @@ namespace F_Clicker
             this.psticker = new System.Windows.Forms.Timer(this.components);
             this.correcter = new System.Windows.Forms.Timer(this.components);
             this.playtime = new System.Windows.Forms.Timer(this.components);
-            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.rebirtcycle = new System.Windows.Forms.ProgressBar();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upgrades)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -184,14 +189,14 @@ namespace F_Clicker
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -199,9 +204,15 @@ namespace F_Clicker
             // 
             this.autoSaveToolStripMenuItem.Name = "autoSaveToolStripMenuItem";
             this.autoSaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.autoSaveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.autoSaveToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this.autoSaveToolStripMenuItem.Text = "AutoSave";
             this.autoSaveToolStripMenuItem.Click += new System.EventHandler(this.autoSaveToolStripMenuItem_Click);
+            // 
+            // checkForUpdatesToolStripMenuItem
+            // 
+            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.checkForUpdatesToolStripMenuItem.Text = "Check For Updates";
             // 
             // optionsToolStripMenuItem
             // 
@@ -228,7 +239,7 @@ namespace F_Clicker
             // devToolsToolStripMenuItem
             // 
             this.devToolsToolStripMenuItem.Name = "devToolsToolStripMenuItem";
-            this.devToolsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.devToolsToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.devToolsToolStripMenuItem.Text = "Dev Tools";
             this.devToolsToolStripMenuItem.Click += new System.EventHandler(this.devToolsToolStripMenuItem_Click);
             // 
@@ -260,17 +271,56 @@ namespace F_Clicker
             this.playtime.Interval = 1;
             this.playtime.Tick += new System.EventHandler(this.playtime_Tick);
             // 
-            // checkForUpdatesToolStripMenuItem
+            // checkBox2
             // 
-            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.checkForUpdatesToolStripMenuItem.Text = "Check For Updates";
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(661, 336);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(127, 21);
+            this.checkBox2.TabIndex = 5;
+            this.checkBox2.Text = "Show Skill Tree";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::F_Clicker.Properties.Resources.Flogo;
+            this.pictureBox2.Location = new System.Drawing.Point(673, 247);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 53);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // rebirtcycle
+            // 
+            this.rebirtcycle.Location = new System.Drawing.Point(491, 27);
+            this.rebirtcycle.Maximum = 1000000;
+            this.rebirtcycle.Name = "rebirtcycle";
+            this.rebirtcycle.Size = new System.Drawing.Size(297, 23);
+            this.rebirtcycle.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.rebirtcycle.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(491, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(297, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Rebirtneeds: 0/1000000";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.rebirtcycle);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.upgrades);
             this.Controls.Add(this.pictureBox1);
@@ -287,6 +337,7 @@ namespace F_Clicker
             ((System.ComponentModel.ISupportInitialize)(this.upgrades)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,6 +372,10 @@ namespace F_Clicker
         private System.Windows.Forms.DataGridViewButtonColumn ManualFabricator;
         private System.Windows.Forms.DataGridViewButtonColumn Fonator;
         private System.Windows.Forms.ToolStripMenuItem checkForUpdatesToolStripMenuItem;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ProgressBar rebirtcycle;
+        private System.Windows.Forms.Button button1;
     }
 }
 
