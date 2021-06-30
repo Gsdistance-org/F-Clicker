@@ -186,7 +186,7 @@ namespace F_Clicker
                     pictureBox8.Hide();
                     pictureBox9.Hide();
                     pictureBox10.Hide();
-                    fcolorscheme = 0;
+                    fcolorscheme = 1;
                 }
             }
             else
