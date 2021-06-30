@@ -717,15 +717,15 @@ namespace F_Clicker
 
         private void colorChangerONToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(colorChangerONToolStripMenuItem.Text == "Color Changer(OFF)")
-            {
-                colorChangerONToolStripMenuItem.Text = "Color Changer (ON)";
-                changefscolorscheme = true;
-            }
-            else
+            if(changefscolorscheme)
             {
                 colorChangerONToolStripMenuItem.Text = "Color Changer (OFF)";
                 changefscolorscheme = false;
+            }
+            else
+            {
+                colorChangerONToolStripMenuItem.Text = "Color Changer (ON)";
+                changefscolorscheme = true;
             }
         }
 
