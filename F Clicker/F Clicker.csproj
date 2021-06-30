@@ -92,6 +92,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Flogo.ico" />
+    <None Include="flogos\yellow.png" />
+    <None Include="flogos\red.png" />
+    <None Include="flogos\pink.png" />
+    <None Include="flogos\orange.png" />
+    <None Include="flogos\lightblue.png" />
+    <None Include="flogos\green.png" />
+    <None Include="flogos\darkblue.png" />
+    <None Include="flogos\classic.png" />
+    <None Include="flogos\blue.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="updatefiles\1.0.2\" />
