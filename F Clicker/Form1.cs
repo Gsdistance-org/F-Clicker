@@ -17,7 +17,7 @@ namespace F_Clicker
     {
         string[] versionconf = new string[2];
         static int versionint = 102;
-        static string ver = "1.0.3";
+        static string ver = "1.0.4";
         string[] master = new string[34];
         double Fs = 0;
         double Fpc = 1;
