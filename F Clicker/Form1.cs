@@ -189,6 +189,21 @@ namespace F_Clicker
                     fcolorscheme = 0;
                 }
             }
+            else
+            {
+                if (fcolorscheme == 1)
+                {
+                    pictureBox1.Show();
+                    pictureBox3.Hide();
+                    pictureBox4.Hide();
+                    pictureBox5.Hide();
+                    pictureBox6.Hide();
+                    pictureBox7.Hide();
+                    pictureBox8.Hide();
+                    pictureBox9.Hide();
+                    pictureBox10.Hide();
+                }
+            }
             if (rebirtget)
             {
                 if (Fs > rebirtfneed)
