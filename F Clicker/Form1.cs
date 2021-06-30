@@ -47,6 +47,7 @@ namespace F_Clicker
         double multskillfneed = 100000;
         int multskilllevel = 0;
         bool multskillisbuyed = false;
+        bool changefscolorscheme = true;
         public Form1()
         {
             InitializeComponent();
