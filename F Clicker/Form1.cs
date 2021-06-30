@@ -47,7 +47,7 @@ namespace F_Clicker
         double multskillfneed = 100000;
         int multskilllevel = 0;
         bool multskillisbuyed = false;
-        bool changefscolorscheme = true;
+        bool changefscolorscheme = false;
         int fcolorscheme = 1;
         public Form1()
         {
@@ -186,6 +186,7 @@ namespace F_Clicker
                     pictureBox8.Hide();
                     pictureBox9.Hide();
                     pictureBox10.Hide();
+                    fcolorscheme = 0;
                 }
             }
             if (rebirtget)
@@ -699,6 +700,20 @@ namespace F_Clicker
             if (changefscolorscheme)
             {
                 fcolorscheme++;
+            }
+        }
+
+        private void colorChangerONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(colorChangerONToolStripMenuItem.Text == "Color Changer(OFF)")
+            {
+                colorChangerONToolStripMenuItem.Text = "Color Changer (ON)";
+                changefscolorscheme = true;
+            }
+            else
+            {
+                colorChangerONToolStripMenuItem.Text = "Color Changer (OFF)";
+                changefscolorscheme = false;
             }
         }
 

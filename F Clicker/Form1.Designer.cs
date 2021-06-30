@@ -70,6 +70,7 @@ namespace F_Clicker
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.colorChangerONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.upgrades)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -222,7 +223,8 @@ namespace F_Clicker
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.autoSaveONToolStripMenuItem});
+            this.autoSaveONToolStripMenuItem,
+            this.colorChangerONToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.optionsToolStripMenuItem.Text = "Options";
@@ -230,7 +232,7 @@ namespace F_Clicker
             // autoSaveONToolStripMenuItem
             // 
             this.autoSaveONToolStripMenuItem.Name = "autoSaveONToolStripMenuItem";
-            this.autoSaveONToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.autoSaveONToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.autoSaveONToolStripMenuItem.Text = "Auto-Save (ON)";
             // 
             // toolsToolStripMenuItem
@@ -416,6 +418,13 @@ namespace F_Clicker
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
+            // colorChangerONToolStripMenuItem
+            // 
+            this.colorChangerONToolStripMenuItem.Name = "colorChangerONToolStripMenuItem";
+            this.colorChangerONToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.colorChangerONToolStripMenuItem.Text = "Color Changer (OFF)";
+            this.colorChangerONToolStripMenuItem.Click += new System.EventHandler(this.colorChangerONToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -504,6 +513,7 @@ namespace F_Clicker
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.ToolStripMenuItem colorChangerONToolStripMenuItem;
     }
 }
 
